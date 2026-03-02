@@ -10,7 +10,7 @@ export function CartLink({ locale }: { locale: Locale }) {
   return (
     <Link
       href={`/${locale}/cart`}
-      className="relative flex h-10 w-10 items-center justify-center rounded-full border border-zinc-600 bg-zinc-900/80 text-zinc-200 transition hover:border-lime-400/60 hover:bg-zinc-800 hover:text-lime-400"
+      className="relative flex min-h-[48px] min-w-[48px] flex-shrink-0 items-center justify-center rounded-full border border-zinc-600 bg-zinc-900/80 p-2 text-zinc-200 transition hover:border-lime-400/60 hover:bg-zinc-800 hover:text-lime-400 active:scale-95 touch-manipulation"
       aria-label={locale === 'tr' ? 'Sepet' : 'Cart'}
     >
       <svg

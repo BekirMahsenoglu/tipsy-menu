@@ -13,8 +13,8 @@ export function Header({ locale }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-gradient-to-b from-black via-zinc-950 to-zinc-900/90 backdrop-blur-xl">
       <div className="relative container flex h-24 items-center justify-center px-4">
-        {/* Dil butonları sağ üstte, rahatsız etmeyecek şekilde */}
-        <div className="absolute right-4 top-1/2 flex -translate-y-1/2 items-center gap-2 sm:right-6">
+        {/* Mobilde sepet + dil: daha genis dokunma alani, ustte sabit */}
+        <div className="absolute right-2 top-1/2 z-10 flex -translate-y-1/2 items-center gap-1 sm:right-6 sm:gap-2">
           {process.env.NEXT_PUBLIC_STATIC_BUILD !== 'true' && (
             <CartLink locale={locale} />
           )}
