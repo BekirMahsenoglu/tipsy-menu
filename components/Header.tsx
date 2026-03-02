@@ -32,8 +32,8 @@ export function Header({ locale }: HeaderProps) {
               priority
             />
           </div>
-          <div className="text-center text-[10px] font-medium uppercase tracking-[0.3em] text-lime-400/80 sm:text-xs">
-            signature bar & cocktail lounge
+          <div className="text-center text-xl font-bold uppercase tracking-[0.35em] text-lime-400 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] sm:text-2xl md:text-3xl md:tracking-[0.4em]">
+            Tipsy Monkey
           </div>
         </div>
       </div>
