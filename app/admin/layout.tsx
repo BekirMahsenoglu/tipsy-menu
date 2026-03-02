@@ -19,7 +19,13 @@ export default async function AdminLayout({
     )
   }
 
-  const user = await getCurrentUser()
+  let user = null
+  try {
+    user = await getCurrentUser()
+  } catch (err) {
+    // NEXTAUTH_URL / NEXTAUTH_SECRET veya DB hatasinda en azindan login sayfasi acilsin
+    console.error('[Admin layout] getCurrentUser error:', err)
+  }
 
   // Allow access to login page without auth
   if (!user) {
