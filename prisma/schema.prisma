@@ -1,5 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Production: PostgreSQL (Neon) on Vercel
 
 generator client {
   provider = "prisma-client-js"
