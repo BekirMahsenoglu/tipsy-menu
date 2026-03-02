@@ -23,8 +23,15 @@ export async function POST(request: NextRequest) {
 
     const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
 
-    // Vercel: dosya sistemi salt okunur; Blob storage kullan
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
+    // Vercel: dosya sistemi salt okunur; sadece Blob kullanilir
+    if (process.env.VERCEL || process.env.BLOB_READ_WRITE_TOKEN) {
+      const token = process.env.BLOB_READ_WRITE_TOKEN
+      if (!token) {
+        return NextResponse.json(
+          { error: 'Resim yukleme icin Vercel Blob storage ekleyin: Proje > Storage > Blob olustur, BLOB_READ_WRITE_TOKEN otomatik eklenir.' },
+          { status: 503 }
+        )
+      }
       const { put } = require('@vercel/blob') as { put: (pathname: string, body: Blob | File | ArrayBuffer | string, options?: { access: 'public' }) => Promise<{ url: string }> }
       const blob = await put(filename, file, { access: 'public' })
       return NextResponse.json({ url: blob.url })
