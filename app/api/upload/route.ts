@@ -18,21 +18,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 })
     }
 
+    const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
+
+    // Vercel: dosya sistemi salt okunur; Blob storage kullan
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      const { put } = await import('@vercel/blob')
+      const blob = await put(filename, file, { access: 'public' })
+      return NextResponse.json({ url: blob.url })
+    }
+
+    // Lokal: public/uploads klasörüne yaz
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
-
     const uploadsDir = join(process.cwd(), 'public', 'uploads')
     if (!existsSync(uploadsDir)) {
       await mkdir(uploadsDir, { recursive: true })
     }
-
-    const filename = `${Date.now()}-${file.name}`
     const filepath = join(uploadsDir, filename)
-
     await writeFile(filepath, buffer)
-
     const url = `/uploads/${filename}`
-
     return NextResponse.json({ url })
   } catch (error) {
     console.error('Upload error:', error)
