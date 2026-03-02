@@ -1,0 +1,182 @@
+{
+  "categories": [
+    {
+      "id": "cat-1",
+      "nameTr": "İmza Kokteyller",
+      "nameEn": "Signature Cocktails",
+      "order": 1,
+      "products": [
+        {
+          "id": "p1",
+          "nameTr": "Golden Sunset",
+          "nameEn": "Golden Sunset",
+          "descriptionTr": "Bourbon, portakal likörü, bal şurubu, limon suyu, portakal bitters",
+          "descriptionEn": "Bourbon, orange liqueur, honey syrup, lemon juice, orange bitters",
+          "price": 340,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p2",
+          "nameTr": "Smoky Negroni",
+          "nameEn": "Smoky Negroni",
+          "descriptionTr": "İsli viski, campari, tatlı vermut, portakal kabuğu",
+          "descriptionEn": "Smoky whisky, campari, sweet vermouth, orange peel",
+          "price": 360,
+          "imageUrl": null,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "id": "cat-2",
+      "nameTr": "Klasik Kokteyller",
+      "nameEn": "Classic Cocktails",
+      "order": 2,
+      "products": [
+        {
+          "id": "p3",
+          "nameTr": "Margarita",
+          "nameEn": "Margarita",
+          "descriptionTr": "Tekila, triple sec, lime suyu, tuz kenarlı bardak",
+          "descriptionEn": "Tequila, triple sec, lime juice, salt rim",
+          "price": 310,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p4",
+          "nameTr": "Old Fashioned",
+          "nameEn": "Old Fashioned",
+          "descriptionTr": "Bourbon, esmer şeker, Angostura bitters, portakal kabuğu",
+          "descriptionEn": "Bourbon, brown sugar, Angostura bitters, orange peel",
+          "price": 330,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p5",
+          "nameTr": "Dry Martini",
+          "nameEn": "Dry Martini",
+          "descriptionTr": "Cin, dry vermut, zeytin veya limon kabuğu",
+          "descriptionEn": "Gin, dry vermouth, olive or lemon peel",
+          "price": 320,
+          "imageUrl": null,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "id": "cat-3",
+      "nameTr": "Viski",
+      "nameEn": "Whisky",
+      "order": 3,
+      "products": [
+        {
+          "id": "p6",
+          "nameTr": "Single Malt 12 Yıl",
+          "nameEn": "Single Malt 12 Years",
+          "descriptionTr": "İskoç single malt viski, sek veya buzlu servis",
+          "descriptionEn": "Scottish single malt whisky, served neat or on the rocks",
+          "price": 420,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p7",
+          "nameTr": "Blended Scotch",
+          "nameEn": "Blended Scotch",
+          "descriptionTr": "Karışım İskoç viskisi, sek / buzlu veya kola ile",
+          "descriptionEn": "Blended Scotch whisky, neat / on the rocks or with cola",
+          "price": 360,
+          "imageUrl": null,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "id": "cat-4",
+      "nameTr": "Bira",
+      "nameEn": "Beer",
+      "order": 4,
+      "products": [
+        {
+          "id": "p8",
+          "nameTr": "Lager Bira Şişe",
+          "nameEn": "Bottle Lager Beer",
+          "descriptionTr": "Yerel veya ithal lager bira, 33 cl şişe",
+          "descriptionEn": "Local or imported lager beer, 33 cl bottle",
+          "price": 190,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p9",
+          "nameTr": "Craft IPA",
+          "nameEn": "Craft IPA",
+          "descriptionTr": "Meyvemsi ve aromatik el yapımı IPA bira",
+          "descriptionEn": "Fruity and aromatic craft IPA beer",
+          "price": 240,
+          "imageUrl": null,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "id": "cat-5",
+      "nameTr": "Aperatifler",
+      "nameEn": "Aperitifs",
+      "order": 5,
+      "products": [
+        {
+          "id": "p10",
+          "nameTr": "Peynir & Şarküteri Tabağı",
+          "nameEn": "Cheese & Charcuterie Board",
+          "descriptionTr": "Seçili olgun peynirler, şarküteri ürünleri, zeytin ve kuru meyveler",
+          "descriptionEn": "Selection of aged cheeses, charcuterie, olives and dried fruits",
+          "price": 420,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p11",
+          "nameTr": "Trüf Patates Kızartması",
+          "nameEn": "Truffle Fries",
+          "descriptionTr": "Trüf yağı, parmesan ve deniz tuzu ile servis edilen çıtır patates",
+          "descriptionEn": "Crispy fries with truffle oil, parmesan and sea salt",
+          "price": 210,
+          "imageUrl": null,
+          "inStock": true
+        }
+      ]
+    },
+    {
+      "id": "cat-6",
+      "nameTr": "Alkolsüz",
+      "nameEn": "Non-Alcoholic",
+      "order": 6,
+      "products": [
+        {
+          "id": "p12",
+          "nameTr": "İmza Limonata",
+          "nameEn": "Signature Lemonade",
+          "descriptionTr": "Taze limon suyu, nane, esmer şeker, soda",
+          "descriptionEn": "Fresh lemon juice, mint, brown sugar, soda",
+          "price": 170,
+          "imageUrl": null,
+          "inStock": true
+        },
+        {
+          "id": "p13",
+          "nameTr": "Berry Cooler",
+          "nameEn": "Berry Cooler",
+          "descriptionTr": "Yaban mersini, ahududu, nar suyu ve soda",
+          "descriptionEn": "Blueberry, raspberry, pomegranate juice and soda",
+          "price": 185,
+          "imageUrl": null,
+          "inStock": true
+        }
+      ]
+    }
+  ]
+}

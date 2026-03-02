@@ -1,0 +1,42 @@
+'use client'
+
+import Image from 'next/image'
+import { LanguageSwitcher } from './LanguageSwitcher'
+import { CartLink } from './CartLink'
+import { Locale } from '@/lib/i18n'
+
+interface HeaderProps {
+  locale: Locale
+}
+
+export function Header({ locale }: HeaderProps) {
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-gradient-to-b from-black via-zinc-950 to-zinc-900/90 backdrop-blur-xl">
+      <div className="relative container flex h-24 items-center justify-center px-4">
+        {/* Dil butonları sağ üstte, rahatsız etmeyecek şekilde */}
+        <div className="absolute right-4 top-1/2 flex -translate-y-1/2 items-center gap-2 sm:right-6">
+          {process.env.NEXT_PUBLIC_STATIC_BUILD !== 'true' && (
+            <CartLink locale={locale} />
+          )}
+          <LanguageSwitcher currentLocale={locale} />
+        </div>
+
+        {/* Logo merkezde ve büyük */}
+        <div className="relative flex max-w-full flex-col items-center gap-1">
+          <div className="relative h-14 w-[230px] sm:h-20 sm:w-[320px] md:h-24 md:w-[380px]">
+            <Image
+              src="/logo.png"
+              alt="Tipsy Monkey Logo"
+              fill
+              className="object-contain drop-shadow-[0_0_22px_rgba(0,0,0,0.95)]"
+              priority
+            />
+          </div>
+          <div className="text-center text-[10px] font-medium uppercase tracking-[0.3em] text-lime-400/80 sm:text-xs">
+            signature bar & cocktail lounge
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
