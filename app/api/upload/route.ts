@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
         )
       }
       const { put } = require('@vercel/blob') as { put: (pathname: string, body: Blob | File | ArrayBuffer | string, options?: { access: 'public' | 'private' }) => Promise<{ url: string }> }
-      const blob = await put(filename, file, { access: 'private' })
+      const blob = await put(filename, file, { access: 'public' })
       return NextResponse.json({ url: blob.url })
     }
 
