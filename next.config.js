@@ -3,6 +3,9 @@ const isStaticExport = process.env.BUILD_STATIC === '1'
 
 const nextConfig = {
   output: isStaticExport ? 'export' : undefined,
+  experimental: {
+    serverComponentsExternalPackages: ['@vercel/blob'],
+  },
   images: {
     unoptimized: isStaticExport,
     domains: ['localhost'],

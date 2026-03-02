@@ -4,6 +4,9 @@ import { writeFile, mkdir } from 'fs/promises'
 import { join } from 'path'
 import { existsSync } from 'fs'
 
+// Vercel Blob webpack/undici uyumsuzlugu icin Node.js runtime zorla
+export const runtime = 'nodejs'
+
 export async function POST(request: NextRequest) {
   try {
     const user = await getCurrentUser()
@@ -22,7 +25,7 @@ export async function POST(request: NextRequest) {
 
     // Vercel: dosya sistemi salt okunur; Blob storage kullan
     if (process.env.BLOB_READ_WRITE_TOKEN) {
-      const { put } = await import('@vercel/blob')
+      const { put } = require('@vercel/blob') as { put: (pathname: string, body: Blob | File | ArrayBuffer | string, options?: { access: 'public' }) => Promise<{ url: string }> }
       const blob = await put(filename, file, { access: 'public' })
       return NextResponse.json({ url: blob.url })
     }
