@@ -7,6 +7,7 @@ import { Button } from './ui/button'
 import { QuickOrderDialog } from './QuickOrderDialog'
 import { useCart } from '@/context/CartContext'
 import { Locale } from '@/lib/i18n'
+import { getImageSrc } from '@/lib/utils'
 
 interface Product {
   id: string
@@ -47,7 +48,7 @@ export function ProductGrid({ products, locale }: ProductGridProps) {
           {product.imageUrl && (
             <div className="relative h-44 w-full overflow-hidden bg-zinc-900/90">
               <Image
-                src={product.imageUrl}
+                src={getImageSrc(product.imageUrl)}
                 alt={locale === 'tr' ? product.nameTr : product.nameEn}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

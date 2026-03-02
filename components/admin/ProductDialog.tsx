@@ -20,6 +20,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
+import { getImageSrc } from '@/lib/utils'
 
 interface Category {
   id: string
@@ -234,7 +235,7 @@ export function ProductDialog({
               />
               {imageUrl && (
                 <div className="relative h-32 w-32 overflow-hidden rounded-md">
-                  <img src={imageUrl} alt="Preview" className="h-full w-full object-cover" />
+                  <img src={getImageSrc(imageUrl)} alt="Preview" className="h-full w-full object-cover" />
                 </div>
               )}
             </div>

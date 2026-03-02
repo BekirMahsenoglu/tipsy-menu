@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { ProductDialog } from './ProductDialog'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { getImageSrc } from '@/lib/utils'
 
 interface Category {
   id: string
@@ -141,7 +142,7 @@ export function ProductManager({ initialProducts, categories }: ProductManagerPr
                 {product.imageUrl && (
                   <div className="relative h-24 w-24 overflow-hidden rounded-md">
                     <Image
-                      src={product.imageUrl}
+                      src={getImageSrc(product.imageUrl)}
                       alt={product.nameTr}
                       fill
                       className="object-cover"
