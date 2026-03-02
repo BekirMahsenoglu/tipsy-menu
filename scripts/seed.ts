@@ -3,9 +3,8 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  console.log('Seeding bar menu...')
+  console.log('Seeding bar menu (her kategoride 2 ürün)...')
 
-  // Clear existing data
   await prisma.product.deleteMany()
   await prisma.category.deleteMany()
 
@@ -26,7 +25,7 @@ async function main() {
 
   await prisma.product.createMany({
     data: [
-      // İmza Kokteyller
+      // İmza Kokteyller (2)
       {
         nameTr: 'Golden Sunset',
         nameEn: 'Golden Sunset',
@@ -45,7 +44,7 @@ async function main() {
         categoryId: byNameTr('İmza Kokteyller').id,
         inStock: true,
       },
-      // Klasik Kokteyller
+      // Klasik Kokteyller (2)
       {
         nameTr: 'Margarita',
         nameEn: 'Margarita',
@@ -64,16 +63,7 @@ async function main() {
         categoryId: byNameTr('Klasik Kokteyller').id,
         inStock: true,
       },
-      {
-        nameTr: 'Dry Martini',
-        nameEn: 'Dry Martini',
-        descriptionTr: 'Cin, dry vermut, zeytin veya limon kabuğu',
-        descriptionEn: 'Gin, dry vermouth, olive or lemon peel',
-        price: 320,
-        categoryId: byNameTr('Klasik Kokteyller').id,
-        inStock: true,
-      },
-      // Viski
+      // Viski (2)
       {
         nameTr: 'Single Malt 12 Yıl',
         nameEn: 'Single Malt 12 Years',
@@ -92,7 +82,7 @@ async function main() {
         categoryId: byNameTr('Viski').id,
         inStock: true,
       },
-      // Bira
+      // Bira (2)
       {
         nameTr: 'Lager Bira Şişe',
         nameEn: 'Bottle Lager Beer',
@@ -111,7 +101,7 @@ async function main() {
         categoryId: byNameTr('Bira').id,
         inStock: true,
       },
-      // Aperatifler
+      // Aperatifler (2)
       {
         nameTr: 'Peynir & Şarküteri Tabağı',
         nameEn: 'Cheese & Charcuterie Board',
@@ -130,7 +120,7 @@ async function main() {
         categoryId: byNameTr('Aperatifler').id,
         inStock: true,
       },
-      // Alkolsüz
+      // Alkolsüz (2)
       {
         nameTr: 'İmza Limonata',
         nameEn: 'Signature Lemonade',
@@ -152,7 +142,7 @@ async function main() {
     ],
   })
 
-  console.log('Seeding finished.')
+  console.log('Tamamlandı: 6 kategori, her birinde 2 ürün (toplam 12 ürün).')
 }
 
 main()
@@ -163,4 +153,3 @@ main()
   .finally(async () => {
     await prisma.$disconnect()
   })
-
