@@ -11,6 +11,9 @@ interface PageProps {
   }>
 }
 
+// Her istekte guncel menuyu veritabanindan al (admin'den eklenen/guncellenen urunler gorunsun)
+export const dynamic = 'force-dynamic'
+
 export function generateStaticParams() {
   return [{ locale: 'tr' as const }, { locale: 'en' as const }]
 }
